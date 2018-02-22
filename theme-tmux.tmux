@@ -1,4 +1,4 @@
-#!/usr/bin/env/ bash
+#!/bin/bash
 # ─────────────────────────────────────────────────────────────────────────────┐
 #
 # Name:    theme-tmux.tt
@@ -30,12 +30,16 @@
 #
 # ─────────────────────────────────────────────────────────────────────────────┘
 
+
+CURRENT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+THEME_FILE=themes/theme.conf
+
 load() {
-  tmux source-file "theme.conf"
+  tmux source-file "$CURRENT_DIR/$THEME_FILE"
 }
 
 load
 
 
 
-# vim: set filetype=eruby.conf :
+# vim: set filetype=eruby.tmux :
